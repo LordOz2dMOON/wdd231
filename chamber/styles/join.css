@@ -51,6 +51,18 @@
        nav {
     background-color: var(--dark-charcoal);
     padding: 0 1rem;
+    position: relative;
+}
+
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    user-select: none;
+    background: none;
+    border: none;
 }
 
 .nav-menu a.active {
@@ -569,4 +581,83 @@
 .social-links svg {
     width: 24px;
     height: 24px;
+}
+
+/* Show hamburger button on mobile */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+        padding: 1rem;
+        user-select: none;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-charcoal);
+        flex-direction: column;
+        padding: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-menu li {
+        flex: none;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        padding: 1rem;
+        display: block;
+    }
+
+    .nav-menu a:hover {
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-section {
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-section:not(:last-child) {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 1.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
 }

@@ -262,11 +262,13 @@
             color: var(--dark-charcoal);
         }
 
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .thank-you-content {
                 padding: 2rem;
             }
+
 
             h1 {
                 font-size: 2rem;

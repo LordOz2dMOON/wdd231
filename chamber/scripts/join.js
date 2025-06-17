@@ -2,6 +2,11 @@
 document.getElementById('copyrightYear').textContent = new Date().getFullYear();
 document.getElementById('lastModified').textContent = document.lastModified;
 
+// Hamburger menu toggle
+document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+});
+
  
  
  // Set timestamp when page loads
