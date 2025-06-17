@@ -72,6 +72,19 @@
     padding: 0 1rem;
 }
 
+.nav-menu a.active {
+    font-weight: bold;
+    color: var(--secondary-gold);
+}
+
+.nav-menu a.active::before {
+    content: "→ ";
+}
+
+.nav-menu a.active::after {
+    content: " ←";
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
