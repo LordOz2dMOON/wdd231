@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Idaho Websites",
+        "address": "2115 S Vista Avenue, Boise ID 83705",
+        "phone": "(208) 342-9386",
+        "website": "https://idahowebsites.com/",
+        "image": "https://placehold.co/300x200?text=Idaho+Websites",
+        "membershipLevel": 3,
+        "description": "Professional web design and development services"
+    },
+    {
+        "name": "Surge Web Design",
+        "address": "4072 E Arch Drive, Meridian ID 83646",
+        "phone": "(208) 631-0640",
+        "website": "https://www.surgewebdesign.com/",
+        "image": "https://placehold.co/300x200?text=Surge+Web+Design",
+        "membershipLevel": 2,
+        "description": "Custom website solutions for small businesses"
+    },
+    {
+        "name": "Graphic Zen",
+        "address": "1788 E Summerplace Court, Meridian ID 83646",
+        "phone": "(208) 631-4894",
+        "website": "https://graphiczen.com/",
+        "image": "https://placehold.co/300x200?text=Graphic+Zen",
+        "membershipLevel": 1,
+        "description": "Creative graphic design and branding services"
+    },
+    {
+        "name": "Peppershock Media",
+        "address": "1215 3rd Street, Nampa ID 83651",
+        "phone": "(208) 461-5070",
+        "website": "https://www.peppershock.com/",
+        "image": "https://placehold.co/300x200?text=Peppershock+Media",
+        "membershipLevel": 3,
+        "description": "Full-service marketing and media production"
+    },
+    {
+        "name": "Flash Tech Services",
+        "address": "Star Idaho 83669",
+        "phone": "(208) 488-5810",
+        "website": "https://flashtechnicalservices.com/",
+        "image": "https://placehold.co/300x200?text=Flash+Tech+Services",
+        "membershipLevel": 2,
+        "description": "IT support and technical services"
+    },
+    {
+        "name": "Metro Express Car Wash",
+        "address": "1725 E Overland Road, Meridian ID 83646",
+        "phone": "(208) 888-4073",
+        "website": "https://www.metroservicescarwash.com/",
+        "image": "https://placehold.co/300x200?text=Metro+Express+Car+Wash",
+        "membershipLevel": 1,
+        "description": "Express car wash and detailing services"
+    },
+    {
+        "name": "Boise Valley Tech",
+        "address": "850 W Front Street, Boise ID 83702",
+        "phone": "(208) 555-7890",
+        "website": "https://boisevalleytech.com/",
+        "image": "https://placehold.co/300x200?text=Boise+Valley+Tech",
+        "membershipLevel": 3,
+        "description": "Technology consulting and software development"
+    }
+]
