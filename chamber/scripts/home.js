@@ -31,7 +31,6 @@ async function fetchWeather() {
         
         // Set weather icon
         const iconCode = currentData.weather[0].icon;
-        document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
         document.getElementById('weather-icon').alt = currentData.weather[0].main;
         
         // Process forecast data to get one entry per day
@@ -70,7 +69,7 @@ async function fetchWeather() {
             
             dayElement.innerHTML = `
                 <h4>${dayNameStr}</h4>
-                <img src="https://openweathermap.org/img/wn/${day.icon}.png" alt="${day.description}">
+                <img src="images/sun.png" alt="${day.description}">
                 <p>${Math.round(day.temp)}°F</p>
             `;
             forecastContainer.appendChild(dayElement);
