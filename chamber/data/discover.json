@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Historic Downtown District",
+        "address": "Main Street, Downtown Area",
+        "description": "Explore our charming historic downtown with Victorian architecture, boutique shops, and local restaurants. Perfect for evening strolls and weekend shopping.",
+        "image": "../chamber/images/faith-knight-oNir57I9ZLg-unsplash.webp",
+        "alt": "Historic downtown street with Victorian buildings"
+    },
+    {
+        "id": 2,
+        "name": "Riverside Park & Marina",
+        "address": "1200 River Drive",
+        "description": "A beautiful waterfront park featuring walking trails, boat rentals, and picnic areas. Enjoy stunning sunset views and family-friendly activities.",
+        "image": "../chamber/images/rohan-gupta-wgULiLZt9co-unsplash.webp",
+        "alt": "Scenic riverside park with marina and walking trails"
+    },
+    {
+        "id": 3,
+        "name": "Heritage Museum",
+        "address": "450 Heritage Lane",
+        "description": "Discover our local history through interactive exhibits, artifacts, and guided tours. Learn about the pioneers who shaped our community.",
+        "image": "../chamber/images/andrew-neel-acowe0pCVBg-unsplash.webp",
+        "alt": "Heritage museum building with colonial architecture"
+    },
+    {
+        "id": 4,
+        "name": "Artisan Market Square",
+        "address": "300 Market Street",
+        "description": "Weekly farmers market and artisan fair featuring local produce, handcrafted goods, and live music. Open Saturdays year-round.",
+        "image": "../chamber/images/buian_photos-b440bTe6jIw-unsplash.webp",
+        "alt": "Bustling artisan market with vendors and shoppers"
+    },
+    {
+        "id": 5,
+        "name": "Greenway Trail System",
+        "address": "Multiple Access Points",
+        "description": "Over 15 miles of paved trails connecting parks, neighborhoods, and business districts. Perfect for cycling, walking, and commuting.",
+        "image": "../chamber/images/urban-vintage-8TJbrQGKFyU-unsplash.webp",
+        "alt": "Paved walking trail through green parkland"
+    },
+    {
+        "id": 6,
+        "name": "Innovation Business Park",
+        "address": "2000 Technology Drive",
+        "description": "Modern business campus housing tech startups and established companies. Features conference facilities and collaborative workspaces.",
+        "image": "../chamber/images/charles-forerunner-3fPXt37X6UQ-unsplash.webp",
+        "alt": "Modern office buildings in business park setting"
+    },
+    {
+        "id": 7,
+        "name": "Community Arts Center",
+        "address": "789 Cultural Avenue",
+        "description": "Hub for performing and visual arts featuring theater productions, art galleries, and educational workshops for all ages.",
+        "image": "../chamber/images/yanhao-fang-AfAYEIYoCDE-unsplash.webp",
+        "alt": "Modern arts center building with glass facade"
+    },
+    {
+        "id": 8,
+        "name": "Mountain View Golf Course",
+        "address": "1500 Golf Club Road",
+        "description": "Championship 18-hole golf course with panoramic mountain views. Includes pro shop, restaurant, and event facilities.",
+        "image": "../chamber/images/ivan-khalak-PwpfN5uTSfA-unsplash.webp",
+        "alt": "Golf course fairway with mountain backdrop"
+    }
+]
