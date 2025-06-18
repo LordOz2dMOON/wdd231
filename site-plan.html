@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Arsenal Squad Analytics Hub - Site Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/site-plan.css">
+</head>
+<body>
+     <header>
+        <div class="container">
+            <h1>Arsenal Squad Analytics Hub</h1>
+            <p class="subtitle">Comprehensive Website Project Plan</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="section">
+                <h2>1. Site Name</h2>
+                <div class="site-name">Arsenal Squad Analytics Hub</div>
+                <div class="domain">Potential Domain: arsenal-analytics.com</div>
+                <p><strong>Reason for Selection:</strong> This name clearly communicates the site's purpose as a comprehensive data-driven platform for Arsenal Football Club. "Analytics Hub" suggests professional-grade statistics and insights, appealing to both casual fans who want quick information and serious supporters who crave detailed performance data. The name is memorable, SEO-friendly, and positions the site as the go-to destination for Arsenal squad analysis.</p>
+            </section>
+
+            <section class="section">
+                <h2>2. Site Purpose</h2>
+                <p>The Arsenal Squad Analytics Hub serves as a <span class="highlight">comprehensive digital platform</span> for Arsenal FC supporters, providing real-time squad information, detailed player statistics, and interactive match analysis tools. The site delivers:</p>
+                <ul style="margin-left: 2rem; color: var(--medium-gray);">
+                    <li><strong>Dynamic Player Profiles:</strong> Complete roster with detailed statistics, performance metrics, and career information</li>
+                    <li><strong>Interactive Match Center:</strong> Fixture lists, match results, tactical analysis, and fan prediction tools</li>
+                    <li><strong>Personalized Experience:</strong> User preferences, favorite player tracking, and match prediction history</li>
+                    <li><strong>Mobile-First Design:</strong> Optimized for on-the-go access during matches and transfer windows</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>3. User Scenarios</h2>
+                <div class="scenarios">
+                    <div class="scenario">
+                        <strong>Scenario 1:</strong> "I'm a casual Arsenal fan who wants to quickly check our squad before the North London Derby. Who are our key players this season, and how have they been performing?"
+                        <p><em>Solution:</em> The dashboard provides featured player spotlights and quick stats, while the squad page offers filterable player cards with key metrics.</p>
+                    </div>
+                    
+                    <div class="scenario">
+                        <strong>Scenario 2:</strong> "I'm debating with friends about whether Saka or Martinelli has been more effective this season. How can I compare their statistics side-by-side?"
+                        <p><em>Solution:</em> The player comparison modal allows detailed statistical analysis between any two squad members.</p>
+                    </div>
+                    
+                    <div class="scenario">
+                        <strong>Scenario 3:</strong> "I want to track Arsenal's upcoming fixtures and predict match outcomes, then see how my predictions compare to actual results."
+                        <p><em>Solution:</em> The Match Center provides fixture lists with prediction forms, storing user predictions in localStorage for future comparison.</p>
+                    </div>
+                    
+                    <div class="scenario">
+                        <strong>Scenario 4:</strong> "As a data analyst and Arsenal supporter, I need detailed squad statistics to write tactical analysis articles for my blog."
+                        <p><em>Solution:</em> Comprehensive player cards with 4+ data properties each, advanced filtering options, and exportable statistics.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>4. Color Schema</h2>
+                <div class="color-palette">
+                    <div class="color-item">
+                        <div class="color-swatch red-swatch"></div>
+                        <div class="color-name">Arsenal Red</div>
+                        <div class="color-usage">#DC143C<br>Headers, CTAs, Accents</div>
+                    </div>
+                    
+                    <div class="color-item">
+                        <div class="color-swatch gold-swatch"></div>
+                        <div class="color-name">Arsenal Gold</div>
+                        <div class="color-usage">#FFD700<br>Highlights, Success States</div>
+                    </div>
+                    
+                    <div class="color-item">
+                        <div class="color-swatch navy-swatch"></div>
+                        <div class="color-name">Dark Navy</div>
+                        <div class="color-usage">#1A1A2E<br>Body Text, Primary Content</div>
+                    </div>
+                    
+                    <div class="color-item">
+                        <div class="color-swatch gray-swatch"></div>
+                        <div class="color-name">Light Gray</div>
+                        <div class="color-usage">#F5F5F5<br>Backgrounds, Cards</div>
+                    </div>
+                </div>
+                <p><strong>Color Rationale:</strong> The palette reflects Arsenal's iconic red and gold identity while maintaining excellent readability and accessibility. The navy provides strong contrast for text, while light gray creates subtle backgrounds that don't compete with content.</p>
+            </section>
+
+            <section class="section">
+                <h2>5. Typography</h2>
+                <div class="typography-demo">
+                    <div class="font-demo">
+                        <h4>Primary Font: Inter</h4>
+                        <div class="inter-demo">
+                            <strong>Usage:</strong> Body text, navigation, player statistics, form elements<br>
+                            <strong>Weights:</strong> 300 (Light), 400 (Regular), 500 (Medium), 600 (Semi-Bold), 700 (Bold)<br>
+                            <strong>Sample:</strong> Arsenal's attacking midfielder Martin Ødegaard has contributed 8 goals and 12 assists this season, demonstrating exceptional creativity and leadership qualities.
+                        </div>
+                    </div>
+                    
+                    <div class="font-demo">
+                        <h4>Secondary Font: Roboto Slab</h4>
+                        <div class="roboto-demo">
+                            <strong>Usage:</strong> Headings, section titles, player names, match titles<br>
+                            <strong>Weights:</strong> 400 (Regular), 500 (Medium), 600 (Semi-Bold)<br>
+                            <strong>Sample:</strong> Squad Analysis Dashboard
+                        </div>
+                    </div>
+                </div>
+                <p><strong>Typography Rationale:</strong> Inter provides excellent readability for data-heavy content and statistics, while Roboto Slab adds character and hierarchy to headings. Both fonts are optimized for screen reading and maintain legibility across all device sizes.</p>
+            </section>
+
+            <section class="section">
+                <h2>6. Wireframes</h2>
+                <div class="wireframe-container">
+                    <div class="wireframe">
+                        <h4>Mobile View (320px - 768px)</h4>
+                        <div class="wireframe-content">
+                            <div class="wireframe-box">Header & Navigation</div>
+                            <div class="wireframe-box">Hero Section<br>Season Overview</div>
+                            <div class="wireframe-box">Featured Player<br>Spotlight Card</div>
+                            <div class="wireframe-box">Recent Matches<br>Stack View</div>
+                            <div class="wireframe-box">Quick Stats Grid<br>2x2 Layout</div>
+                            <div class="wireframe-box">Footer</div>
+                        </div>
+                    </div>
+                    
+                    <div class="wireframe">
+                        <h4>Desktop View (768px+)</h4>
+                        <div class="wireframe-content">
+                            <div class="wireframe-box">Header with Horizontal Navigation</div>
+                            <div style="display: flex; gap: 5px;">
+                                <div class="wireframe-box" style="flex: 2;">Hero Section & Season Overview</div>
+                                <div class="wireframe-box" style="flex: 1;">Featured Player</div>
+                            </div>
+                            <div style="display: flex; gap: 5px;">
+                                <div class="wireframe-box" style="flex: 1;">Recent Matches</div>
+                                <div class="wireframe-box" style="flex: 1;">Quick Stats Dashboard</div>
+                            </div>
+                            <div class="wireframe-box">Footer</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Wireframe Design Principles:</h3>
+                <p><strong>Mobile-First Approach:</strong> Content stacks vertically for optimal thumb navigation, with key information prioritized above the fold.</p>
+                <p><strong>Desktop Enhancement:</strong> Utilizes horizontal space efficiently with sidebar layouts and grid systems, maintaining content hierarchy while improving information density.</p>
+                <p><strong>Progressive Enhancement:</strong> Core functionality accessible on mobile with enhanced features on larger screens.</p>
+            </section>
+
+            <section class="section">
+                <h2>Technical Implementation Overview</h2>
+                <h3>JavaScript Features</h3>
+                <p><strong>API Integration:</strong> Dynamic content fetching from football APIs or local JSON files containing comprehensive Arsenal squad and match data.</p>
+                <p><strong>Interactive Elements:</strong> Modal dialogs for player comparisons, filterable squad grids, and responsive search functionality.</p>
+                <p><strong>Data Persistence:</strong> localStorage implementation for user preferences, favorite players, and match predictions with retrieval and display capabilities.</p>
+                
+                <h3>Responsive Design Strategy</h3>
+                <p><strong>Breakpoints:</strong> Mobile (320px+), Tablet (768px+), Desktop (1024px+), Large Desktop (1440px+)</p>
+                <p><strong>Content Strategy:</strong> Progressive enhancement ensuring core functionality on all devices with enhanced features on capable devices.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Arsenal Squad Analytics Hub - Site Planning Document</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Designed for Arsenal FC supporters worldwide</p>
+        </div>
+    </footer>
+</body>
+</html>
