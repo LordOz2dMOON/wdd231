@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsenal Match Center | Arsenal Analytics Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔴</text></svg>">
+    <link rel="stylesheet" href="styles/analysis.css">
+    <script src="scripts/analysis.js" defer></script>
+</head>
+<body>
+      <!-- Header with Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">🔴</div>
+                <div class="logo-text">Arsenal <span>Analytics</span></div>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="squad-analysis.html">Squad Analysis</a></li>
+                    <li><a href="match-center.html" class="active">Match Center</a></li>
+                    <li><a href="#">Player Profiles</a></li>
+                    <li><a href="#">Statistics</a></li>
+                </ul>
+            </nav>
+            
+            <button class="hamburger" id="hamburgerMenu" aria-label="Open navigation menu">☰</button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobileNav">
+            <button class="close-btn" id="closeMenu" aria-label="Close navigation menu">×</button>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="squad-analysis.html">Squad Analysis</a></li>
+                <li><a href="match-center.html" class="active">Match Center</a></li>
+                <li><a href="#">Player Profiles</a></li>
+                <li><a href="#">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Match Center</h1>
+        <p>Track Arsenal fixtures, make predictions, and analyze match statistics. Stay updated with the latest results and upcoming games.</p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Fixture Navigation -->
+        <section class="section">
+            <div class="fixture-nav">
+                <button class="fixture-btn active" data-filter="all">All Matches</button>
+                <button class="fixture-btn" data-filter="upcoming">Upcoming</button>
+                <button class="fixture-btn" data-filter="recent">Recent</button>
+                <button class="fixture-btn" data-filter="premier">Premier League</button>
+                <button class="fixture-btn" data-filter="europe">Champions League</button>
+                <button class="fixture-btn" data-filter="domestic">Domestic Cups</button>
+            </div>
+            
+            <div class="matches-grid" id="matchesGrid">
+                <!-- Match cards will be dynamically generated here -->
+            </div>
+        </section>
+        
+        <!-- Prediction Form -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title"><i>🔮</i> Match Prediction</h2>
+            </div>
+            
+            <form id="predictionForm" class="prediction-form">
+                <div class="form-group">
+                    <label for="matchSelect">Select Match</label>
+                    <select id="matchSelect" class="form-control" required>
+                        <option value="">Choose an upcoming match</option>
+                        <option value="1">Arsenal vs Chelsea (Premier League)</option>
+                        <option value="2">Arsenal vs Tottenham (Premier League)</option>
+                        <option value="3">Arsenal vs Bayern Munich (Champions League)</option>
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prediction">Match Outcome</label>
+                        <select id="prediction" class="form-control" required>
+                            <option value="">Select outcome</option>
+                            <option value="win">Arsenal Win</option>
+                            <option value="draw">Draw</option>
+                            <option value="loss">Arsenal Loss</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="arsenalScore">Arsenal Goals</label>
+                        <input type="number" id="arsenalScore" class="form-control" min="0" max="10" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="opponentScore">Opponent Goals</label>
+                        <input type="number" id="opponentScore" class="form-control" min="0" max="10" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="motm">Man of the Match Prediction</label>
+                    <select id="motm" class="form-control" required>
+                        <option value="">Select a player</option>
+                        <option value="Saka">Bukayo Saka</option>
+                        <option value="Odegaard">Martin Ødegaard</option>
+                        <option value="Rice">Declan Rice</option>
+                        <option value="Saliba">William Saliba</option>
+                        <option value="Havertz">Kai Havertz</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Additional Comments</label>
+                    <textarea id="comments" class="form-control" rows="3" placeholder="Your match analysis or predictions..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-block">Submit Prediction</button>
+            </form>
+        </section>
+        
+        <!-- Prediction History -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title"><i>📋</i> Prediction History</h2>
+            </div>
+            
+            <div class="predictions-grid" id="predictionsGrid">
+                <!-- Prediction history will be loaded here -->
+            </div>
+        </section>
+        
+        <!-- Season Statistics -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title"><i>📊</i> Season Statistics</h2>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-chart">
+                    <h3 class="chart-title">Match Results Distribution</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar" style="height: 70%;">
+                            <div class="chart-bar-value">18</div>
+                            <div class="chart-bar-label">Wins</div>
+                        </div>
+                        <div class="chart-bar" style="height: 30%;">
+                            <div class="chart-bar-value">5</div>
+                            <div class="chart-bar-label">Draws</div>
+                        </div>
+                        <div class="chart-bar" style="height: 20%;">
+                            <div class="chart-bar-value">2</div>
+                            <div class="chart-bar-label">Losses</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-chart">
+                    <h3 class="chart-title">Goals Scored vs Conceded</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar" style="height: 85%; background-color: var(--arsenal-red);">
+                            <div class="chart-bar-value">62</div>
+                            <div class="chart-bar-label">Scored</div>
+                        </div>
+                        <div class="chart-bar" style="height: 25%; background-color: var(--dark-navy);">
+                            <div class="chart-bar-value">18</div>
+                            <div class="chart-bar-label">Conceded</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-grid" style="margin-top: 2rem;">
+                <div class="stat-card">
+                    <div class="stat-value">25</div>
+                    <div class="stat-label">Matches Played</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">61%</div>
+                    <div class="stat-label">Avg. Possession</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">85%</div>
+                    <div class="stat-label">Pass Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">14</div>
+                    <div class="stat-label">Clean Sheets</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Match Detail Modal -->
+    <div class="modal" id="matchModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Match Details</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="match-teams" style="margin-bottom: 2rem;">
+                    <div class="team">
+                        <div class="team-logo">🔴</div>
+                        <div class="team-name">Arsenal FC</div>
+                    </div>
+                    <div class="vs">vs</div>
+                    <div class="team">
+                        <div class="team-logo">🔵</div>
+                        <div class="team-name">Chelsea FC</div>
+                    </div>
+                </div>
+                
+                <div class="match-score">2-0</div>
+                <div class="match-status win">Arsenal Win</div>
+                
+                <div class="match-info" style="text-align: center; margin-top: 1rem; color: #666;">
+                    Premier League | Emirates Stadium | Apr 23, 2024
+                </div>
+                
+                <div class="lineup-container">
+                    <div class="lineup-team">
+                        <h3 class="lineup-title">Arsenal Lineup</h3>
+                        <ul class="player-list">
+                            <li class="player-item">
+                                <div class="player-number">22</div>
+                                <div class="player-name">David Raya</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">4</div>
+                                <div class="player-name">Ben White</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">2</div>
+                                <div class="player-name">William Saliba</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">6</div>
+                                <div class="player-name">Gabriel Magalhães</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">35</div>
+                                <div class="player-name">Oleksandr Zinchenko</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">41</div>
+                                <div class="player-name">Declan Rice</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">8</div>
+                                <div class="player-name">Martin Ødegaard</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">29</div>
+                                <div class="player-name">Kai Havertz</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">7</div>
+                                <div class="player-name">Bukayo Saka</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">11</div>
+                                <div class="player-name">Gabriel Martinelli</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">19</div>
+                                <div class="player-name">Leandro Trossard</div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lineup-team">
+                        <h3 class="lineup-title">Chelsea Lineup</h3>
+                        <ul class="player-list">
+                            <li class="player-item">
+                                <div class="player-number">1</div>
+                                <div class="player-name">Robert Sánchez</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">27</div>
+                                <div class="player-name">Malo Gusto</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">2</div>
+                                <div class="player-name">Thiago Silva</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">26</div>
+                                <div class="player-name">Levi Colwill</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">3</div>
+                                <div class="player-name">Marc Cucurella</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">25</div>
+                                <div class="player-name">Moises Caicedo</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">8</div>
+                                <div class="player-name">Enzo Fernández</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">20</div>
+                                <div class="player-name">Cole Palmer</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">23</div>
+                                <div class="player-name">Conor Gallagher</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">7</div>
+                                <div class="player-name">Raheem Sterling</div>
+                            </li>
+                            <li class="player-item">
+                                <div class="player-number">15</div>
+                                <div class="player-name">Nicolas Jackson</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="match-stats">
+                    <div>
+                        <h3 class="lineup-title">Match Statistics</h3>
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <div class="stat-value">62%</div>
+                                <div class="stat-label">Possession</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">38%</div>
+                                <div class="stat-label">Possession</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">16</div>
+                                <div class="stat-label">Shots</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">8</div>
+                                <div class="stat-label">Shots</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">6</div>
+                                <div class="stat-label">Shots on Target</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">3</div>
+                                <div class="stat-label">Shots on Target</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">89%</div>
+                                <div class="stat-label">Pass Accuracy</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">82%</div>
+                                <div class="stat-label">Pass Accuracy</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="lineup-title">Key Events</h3>
+                        <ul class="player-list">
+                            <li class="player-item">
+                                <div style="font-weight: bold; color: var(--arsenal-red);">⚽ 32'</div>
+                                <div>Goal! Bukayo Saka (Arsenal)</div>
+                            </li>
+                            <li class="player-item">
+                                <div style="font-weight: bold; color: var(--arsenal-red);">🟨 45+2'</div>
+                                <div>Yellow card for Malo Gusto (Chelsea)</div>
+                            </li>
+                            <li class="player-item">
+                                <div style="font-weight: bold; color: var(--arsenal-red);">⚽ 64'</div>
+                                <div>Goal! Kai Havertz (Arsenal)</div>
+                            </li>
+                            <li class="player-item">
+                                <div style="font-weight: bold; color: var(--arsenal-red);">🔄 72'</div>
+                                <div>Substitution: Leandro Trossard IN, Gabriel Martinelli OUT</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">Arsenal <span>Analytics</span></div>
+                <p>Your comprehensive source for Arsenal FC statistics, player performance data, and match analysis. Providing fans with deeper insights into the beautiful game.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="squad-analysis.html">Squad Analysis</a></li>
+                    <li><a href="match-center.html">Match Center</a></li>
+                    <li><a href="#">Match Archive</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Season Statistics</a></li>
+                    <li><a href="#">Player Profiles</a></li>
+                    <li><a href="#">Tactical Analysis</a></li>
+                    <li><a href="#">Transfer Rumors</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2024 Arsenal Analytics Hub. This is an independent fan site and is not affiliated with Arsenal FC.
+        </div>
+    </footer>
+</body>
+</html>

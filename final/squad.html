@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arsenal FC Squad Analysis - Detailed player statistics and performance metrics">
+    <meta name="keywords" content="Arsenal FC, player stats, squad analysis, football analytics">
+    <title>Arsenal Squad Analytics Hub | Squad Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔴</text></svg>">
+    <link rel="stylesheet" href="styles/squad.css">
+    <script src="scripts/squad.js" defer></script>
+</head>
+<body>
+   <!-- Header with Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">🔴</div>
+                <div class="logo-text">Arsenal <span>Analytics</span></div>
+            </div>
+            
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="squad-analysis.html" class="active">Squad Analysis</a></li>
+                    <li><a href="#">Match Center</a></li>
+                    <li><a href="#">Player Profiles</a></li>
+                    <li><a href="#">Statistics</a></li>
+                </ul>
+            </nav>
+            
+            <button class="hamburger" id="hamburgerMenu" aria-label="Open navigation menu">☰</button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobileNav">
+            <button class="close-btn" id="closeMenu" aria-label="Close navigation menu">×</button>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="squad-analysis.html" class="active">Squad Analysis</a></li>
+                <li><a href="#">Match Center</a></li>
+                <li><a href="#">Player Profiles</a></li>
+                <li><a href="#">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Squad Analysis</h1>
+        <p>Explore detailed statistics for every Arsenal player. Filter by position, age, or nationality to analyze performance metrics and compare players.</p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Filter Controls -->
+        <section class="section">
+            <div class="filter-controls">
+                <div class="search-bar">
+                    <i class="search-icon">🔍</i>
+                    <input type="text" id="playerSearch" placeholder="Search players..." aria-label="Search players">
+                </div>
+                
+                <div class="filter-group">
+                    <div class="filter-section">
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1rem;">Filter by:</h3>
+                        <div class="filter-group">
+                            <button class="filter-btn active" data-filter="all">All Players</button>
+                            <button class="filter-btn" data-filter="position:Forward">Forwards</button>
+                            <button class="filter-btn" data-filter="position:Midfielder">Midfielders</button>
+                            <button class="filter-btn" data-filter="position:Defender">Defenders</button>
+                            <button class="filter-btn" data-filter="position:Goalkeeper">Goalkeepers</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-section">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1rem;">Age Group:</h3>
+                    <div class="filter-group">
+                        <button class="filter-btn" data-filter="age:U23">U23</button>
+                        <button class="filter-btn" data-filter="age:24-30">24-30</button>
+                        <button class="filter-btn" data-filter="age:31+">31+</button>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1rem;">Nationality:</h3>
+                    <div class="filter-group">
+                        <button class="filter-btn" data-filter="nationality:England">England</button>
+                        <button class="filter-btn" data-filter="nationality:Brazil">Brazil</button>
+                        <button class="filter-btn" data-filter="nationality:France">France</button>
+                        <button class="filter-btn" data-filter="nationality:Other">Other</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Player Cards Grid -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title"><i>👥</i> Squad Roster</h2>
+                <div class="selection-info">
+                    <span class="selection-count" id="selectedCount">0</span>
+                    <span>selected</span>
+                </div>
+                <button class="compare-btn" id="showComparisonBtn" style="display: none;">
+                    <i>⚖️</i> Compare Selected Players
+                </button>
+            </div>
+            
+            <div class="players-grid" id="playersGrid">
+                <!-- Player cards will be dynamically generated here -->
+            </div>
+        </section>
+    </main>
+    
+    <!-- Comparison Modal -->
+    <div class="modal" id="comparisonModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Player Comparison</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="comparison-container">
+                <div class="players-comparison" id="playersComparison">
+                    <!-- Player comparison content will be added here -->
+                </div>
+                <div class="comparison-stats" id="comparisonStats">
+                    <!-- Stats comparison will be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">Arsenal <span>Analytics</span></div>
+                <p>Your comprehensive source for Arsenal FC statistics, player performance data, and match analysis. Providing fans with deeper insights into the beautiful game.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="squad-analysis.html">Squad Analysis</a></li>
+                    <li><a href="#">Player Comparison</a></li>
+                    <li><a href="#">Match Archive</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Season Statistics</a></li>
+                    <li><a href="#">Player Profiles</a></li>
+                    <li><a href="#">Tactical Analysis</a></li>
+                    <li><a href="#">Transfer Rumors</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2024 Arsenal Analytics Hub. This is an independent fan site and is not affiliated with Arsenal FC.
+        </div>
+    </footer>
+</body>
+</html>
