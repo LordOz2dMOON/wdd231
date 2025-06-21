@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             setTimeout(() => {
                 // This is where real API data would be processed
-                console.log('Data loaded successfully');
+                //console.log('Data loaded successfully');
                 
                 // Update UI with dynamic data
                 document.querySelector('.stat-number:nth-child(1)').textContent = '88';
