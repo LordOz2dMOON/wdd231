@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Arsenal FC Squad Analysis - Detailed player statistics and performance metrics">
     <meta name="keywords" content="Arsenal FC, player stats, squad analysis, football analytics">
+    <meta name="author" content="Oswald Ojo">
+    <meta property="og:url" content="YOUR_PAGE_URL">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Player Statistics and Squad Analysis">
+    <meta property="og:description" content="Explore detailed statistics for every Arsenal player. Filter by position, age, or country to analyze performance metrics and compare players.">
+    <meta property="og:image" content="images/arsenal-logo.png">
+    <meta property="og:site_name" content="Arsenal Analytics Hub">
     <title>Arsenal Squad Analytics Hub | Squad Analysis</title>
+    <link rel="icon" href="images/arsenal-logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,20 +25,20 @@
    <!-- Header with Navigation -->
     <header>
         <div class="header-container">
-            <div class="logo">
-                <div class="logo-icon">🔴</div>
+             <div class="logo">
+                <img src="images/cover.png" alt="Arsenal Analytics Logo" class="logo-image">
                 <div class="logo-text">Arsenal <span>Analytics</span></div>
             </div>
             
-            <nav class="nav-desktop">
+           
+              <nav class="nav-desktop">
                 <ul>
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="squad-analysis.html" class="active">Squad Analysis</a></li>
-                    <li><a href="#">Match Center</a></li>
-                    <li><a href="#">Player Profiles</a></li>
-                    <li><a href="#">Statistics</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="squad.html" class="active">Squad Analysis</a></li>
+                    <li><a href="analysis.html">Match Center</a></li>
                 </ul>
             </nav>
+            
             
             <button class="hamburger" id="hamburgerMenu" aria-label="Open navigation menu">☰</button>
         </div>
@@ -38,12 +46,10 @@
         <!-- Mobile Navigation -->
         <nav class="nav-mobile" id="mobileNav">
             <button class="close-btn" id="closeMenu" aria-label="Close navigation menu">×</button>
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="squad-analysis.html" class="active">Squad Analysis</a></li>
-                <li><a href="#">Match Center</a></li>
-                <li><a href="#">Player Profiles</a></li>
-                <li><a href="#">Statistics</a></li>
+           <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="squad.html" class="active">Squad Analysis</a></li>
+                <li><a href="analysis.html">Match Center</a></li>
             </ul>
         </nav>
     </header>
@@ -158,6 +164,7 @@
             <div class="footer-links">
                 <h3>Resources</h3>
                 <ul>
+                    <li><a href="https://www.loom.com/share/placeholder" target="_blank">Design Decisions</a></li>
                     <li><a href="#">Season Statistics</a></li>
                     <li><a href="#">Player Profiles</a></li>
                     <li><a href="#">Tactical Analysis</a></li>
